@@ -65,3 +65,4 @@ The easiest free option is **Netlify**:
 1. Run `npm run build` — creates a `dist/` folder
 2. Go to netlify.com → drag and drop the `dist/` folder
 3. Get a free live URL instantly
+"# hotel" 
