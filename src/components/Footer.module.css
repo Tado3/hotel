@@ -1,0 +1,96 @@
+.footer {
+  background: linear-gradient(160deg, #111009 0%, #1A1610 50%, #0E1A17 100%);
+  padding: 5.5rem 6rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 4rem;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--gold), var(--teal)) 1;
+}
+.logo {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.05em;
+}
+.logo span {
+  background: linear-gradient(135deg, var(--gold-light), var(--teal-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.tagline {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.88;
+  max-width: 240px;
+  margin-bottom: 1.85rem;
+}
+.socials { display: flex; gap: 1.5rem; }
+.social {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.social::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), var(--teal));
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.social:hover { color: var(--gold-light); }
+.social:hover::after { transform: scaleX(1); }
+
+.colHead {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  background: linear-gradient(135deg, var(--gold-light), var(--teal-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.colLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.colLinks a {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.35);
+  transition: color 0.2s;
+}
+.colLinks a:hover { color: rgba(255,255,255,0.8); }
+
+.bottom {
+  background: rgba(0,0,0,0.35);
+  padding: 1.6rem 6rem;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 1024px) {
+  .footer { grid-template-columns: 1fr 1fr; padding: 4rem 2rem; gap: 3rem; }
+  .bottom { padding: 1.5rem 2rem; flex-direction: column; gap: 0.4rem; text-align: center; }
+}
+@media (max-width: 500px) { .footer { grid-template-columns: 1fr; } }

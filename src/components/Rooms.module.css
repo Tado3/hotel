@@ -1,0 +1,98 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.card {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-lg);
+}
+.imgWrap {
+  position: relative;
+  height: 265px;
+  overflow: hidden;
+}
+.imgWrap img { transition: transform 0.6s ease; }
+.card:hover .imgWrap img { transform: scale(1.06); }
+
+.tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  box-shadow: 0 2px 10px rgba(201,147,58,0.4);
+}
+.body { padding: 1.85rem; }
+.name {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  color: var(--charcoal);
+}
+.desc {
+  font-size: 0.88rem;
+  color: var(--warm-gray);
+  line-height: 1.78;
+  margin-bottom: 1.35rem;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.feature {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--teal-dark);
+  background: var(--teal-light);
+  padding: 0.28rem 0.8rem;
+  border: 0.5px solid rgba(42,124,111,0.2);
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 0.5px solid var(--border);
+}
+.price {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 300;
+  color: var(--charcoal);
+}
+.price span {
+  font-size: 0.78rem;
+  color: var(--soft-gray);
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+.bookLink {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  border-bottom: 1.5px solid rgba(42,124,111,0.3);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.bookLink:hover { color: var(--gold-dark); border-color: var(--gold); }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px)  { .grid { grid-template-columns: 1fr; } }

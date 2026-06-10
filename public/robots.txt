@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.yourhotelwebsite.com/sitemap.xml

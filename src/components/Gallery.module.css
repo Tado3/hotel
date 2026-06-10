@@ -1,0 +1,103 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 245px);
+  gap: 1rem;
+}
+.item {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.spanBoth {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+.item:hover img { transform: scale(1.07); }
+
+.itemOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8,6,4,0) 60%,
+    rgba(8,6,4,0) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 1.35rem;
+  transition: background 0.3s;
+}
+.item:hover .itemOverlay {
+  background: linear-gradient(
+    to top,
+    rgba(8,6,4,0.55) 0%,
+    rgba(42,124,111,0.2) 100%
+  );
+}
+.itemOverlay span {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: transparent;
+  transition: color 0.3s;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+.item:hover .itemOverlay span {
+  color: rgba(255,255,255,0.92);
+  border-bottom-color: var(--gold-light);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.94);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  width: auto;
+  height: auto;
+  display: block;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.55);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.close:hover { color: var(--gold-light); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .spanBoth { grid-column: span 2; grid-row: span 1; height: 260px; }
+  .item { height: 200px; }
+}
+@media (max-width: 500px) {
+  .grid { grid-template-columns: 1fr; }
+  .spanBoth { grid-column: span 1; }
+}
